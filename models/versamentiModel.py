@@ -18,7 +18,7 @@ class VersamentiModel(db.Model):
         return VersamentiModel.query.filter_by(id=id).first()
 
     @classmethod
-    def get_all(cls, id):
+    def get_all(cls):
         a=[]
         for i in VersamentiModel.query.filter_by():
             a.append(i)
