@@ -6,18 +6,9 @@ from datetime import timedelta
 from flask import Flask, jsonify, request
 from flask_jwt_extended import JWTManager
 
-from resources.register import Register
-from resources.login import Login
-from resources.refreshToken import RefreshToken
-from resources.getDetails import GetAllDetails, GetMailUsername
-from resources.createObject import CreateObject
-from resources.userOwnedObjects import UserOwnedObjectsList, UserOwnedObject
-from resources.modifyUser import ModifyUser
-from resources.addHashtag import AddHashtag
+from resources.versa import Versa
 
-from resources.checkPairs import CheckPairs
 
-from resources.searchObject import SearchByHashtag, SearchByName
 
 
 app= Flask(__name__)
@@ -44,26 +35,10 @@ def create_table():
 
 
 
-api.add_resource(Register, "/register")
-api.add_resource(Login, "/login")
-api.add_resource(RefreshToken, "/refresh_token")
-
-api.add_resource(ModifyUser, "/user/modify")
-
-api.add_resource(GetAllDetails, "/user/details/all")
-api.add_resource(GetMailUsername, "/user/details/mail_username")
-
-api.add_resource(CreateObject, "/object/create")
-api.add_resource(AddHashtag, "/object/hashtag/add")
-
-api.add_resource(SearchByHashtag, "/search/hashtag")
-api.add_resource(SearchByName, "/search/name")
+api.add_resource(Versa, "/versa")
+#api.add_resource(Login, "/login")
 
 
-api.add_resource(UserOwnedObjectsList, "/objects/owner/list")
-api.add_resource(UserOwnedObject, "/object/owner")
-
-api.add_resource(CheckPairs, "/check/pairs")
 
 
 if __name__=="__main__":
