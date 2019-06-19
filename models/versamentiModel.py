@@ -17,6 +17,12 @@ class VersamentiModel(db.Model):
     def find_by_id(cls, id):
         return VersamentiModel.query.filter_by(id=id).first()
 
+    @classmethod
+    def get_all(cls, id):
+        a=[]
+        for i in VersamentiModel.query.filter_by():
+            a.append(i)
+        return a
 
     @classmethod
     def find_by_giver(cls, giver):
