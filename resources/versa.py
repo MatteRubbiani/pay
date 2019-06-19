@@ -23,4 +23,4 @@ class Versa(Resource):
                 total=total-i.amount
             else:
                 total=total+i.amount
-        return total
+        return total*((-1)**id)
