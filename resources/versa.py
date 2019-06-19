@@ -19,8 +19,8 @@ class Versa(Resource):
         id=int(request.args.get('id'))
         total=0
         for i in VersamentiModel.get_all():
-            if i.id==0:
+            if i.id==1:
                 total=total-i.amount
             else:
                 total=total+i.amount
-        return total*((-1)**id)
+        return total
