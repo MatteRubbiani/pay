@@ -5,7 +5,7 @@ class VersamentiModel(db.Model):
     __tablename__="versamenti"
 
     id = db.Column(db.Integer, primary_key=True)
-    giver=db.Column(db.Integer) #1 per matteo 2 per alessandra
+    giver=db.Column(db.Integer) #0 per matteo 1 per alessandra
     amount=db.Column(db.Integer)
 
     def __init__(self, giver, amount):
