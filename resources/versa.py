@@ -14,3 +14,13 @@ class Versa(Resource):
         versamentoModel=VersamentiModel(id, amount)
         versamentoModel.save_to_db()
         return "ok"
+
+    def get(self):
+        id=int(request.args.get('id'))
+        total=0
+        for i in VersamentiModel.get_all():
+            if i.id==1:
+                total=total-i.amount
+            else:
+                total=total+i.amount
+        return total*((-1)**id)
